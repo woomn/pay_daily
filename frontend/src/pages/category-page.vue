@@ -13,11 +13,11 @@ const filteredCategories = computed(() => {
 })
 
 const headers = [
-  { title: 'Name', key: 'name' },
-  { title: 'Type', key: 'type' },
-  { title: 'Icon', key: 'icon' },
-  { title: 'Created At', key: 'createdAt' },
-  { title: 'Action', key: 'action', sortable: false, align: 'end' as const },
+  { title: 'ชื่อหมวดหมู่', key: 'name' },
+  { title: 'ประเภท', key: 'type' },
+  { title: 'ไอคอน', key: 'icon' },
+  { title: 'วันที่สร้าง', key: 'createdAt' },
+  { title: 'จัดการ', key: 'action', sortable: false, align: 'end' as const },
 ]
 
 const dialog = ref(false)
@@ -117,6 +117,12 @@ const presets = [
         hover
         style="table-layout: fixed;"
       >
+        <template #item.name="{ item }">
+          <div class="d-flex align-center gap-2">
+            <VIcon :color="item.color" size="small">{{ item.icon || 'mdi-help-circle' }}</VIcon>
+            <span class="text-truncate-cell" :title="item.name">{{ item.name }}</span>
+          </div>
+        </template>
         <template #item.type="{ item }">
           <VChip
             :color="item.type === 'income' ? 'success' : 'error'"
@@ -126,8 +132,14 @@ const presets = [
           </VChip>
         </template>
 
+        <template #item.name="{ item }">
+          <div class="d-flex align-center gap-2">
+            <VIcon :color="item.color" size="small">{{ item.icon || 'mdi-help-circle' }}</VIcon>
+            <span class="text-truncate-cell" :title="item.name">{{ item.name }}</span>
+          </div>
+        </template>
         <template #item.icon="{ item }">
-          <VIcon :color="item.color">{{ item.icon }}</VIcon>
+          <VIcon :color="item.color" size="small">{{ item.icon }}</VIcon>
         </template>
 
         <template #item.createdAt="{ item }">
