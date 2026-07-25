@@ -10,7 +10,8 @@ const { categories } = storeToRefs(categoryStore)
 const { transactions, isLoading, error, totalIncome, totalExpense, balance } = storeToRefs(transactionStore)
 
 const typeFilter = ref<'all' | 'income' | 'expense'>('all')
-const dateRange = ref<[string, string]>(['', ''])
+const dateStart = ref('')
+const dateEnd = ref('')
 
 const filteredTransactions = computed(() => {
   let items = transactions.value
@@ -117,9 +118,8 @@ function getCategory(id: string) {
 }
 
 async function refresh() {
-  const [start, end] = dateRange.value
-  if (start && end) {
-    await transactionStore.fetchSummary(start, end)
+  if (dateStart.value && dateEnd.value) {
+    await transactionStore.fetchSummary(dateStart.value, dateEnd.value)
   } else {
     await transactionStore.fetchSummary()
     await transactionStore.fetchTransactions(typeFilter.value === 'all' ? undefined : typeFilter.value)
@@ -190,7 +190,7 @@ onMounted(async () => {
         <span class="text-h6">รายการทั้งหมด</span>
         <div class="d-flex gap-2 align-center">
           <VTextField
-            v-model="dateRange.value[0]"
+            v-model="dateStart"
             type="date"
             density="compact"
             variant="outlined"
@@ -199,7 +199,7 @@ onMounted(async () => {
             class="w-36"
           />
           <VTextField
-            v-model="dateRange.value[1]"
+            v-model="dateEnd"
             type="date"
             density="compact"
             variant="outlined"

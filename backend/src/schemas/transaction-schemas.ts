@@ -20,6 +20,10 @@ export const createTransactionSchema = z.object({
 
 export const updateTransactionSchema = createTransactionSchema.partial()
 
+export const idParamSchema = z.object({
+  id: z.string().min(1),
+})
+
 export const summarySchema = z.object({
   totalIncome: z.number(),
   totalExpense: z.number(),
