@@ -30,11 +30,15 @@ export function createApp(containerFactory: (env: Partial<Bindings>) => Containe
     openAPIRouteHandler(app, {
       documentation: {
         info: {
-          title: 'Starter API',
+          title: 'ngernngern_thongthong API',
           version: '1.0.0',
-          description: 'Hono backend running on Cloudflare Workers (D1 + KV) and AWS Lambda',
+          description: 'Pay Daily — personal finance API running on Cloudflare Workers (D1 + KV) and AWS Lambda',
         },
-        tags: [{ name: 'Users', description: 'User management' }],
+        tags: [
+          { name: 'Users', description: 'User management' },
+          { name: 'Categories', description: 'Income/expense categories' },
+          { name: 'Transactions', description: 'Income/expense transactions' },
+        ],
       },
     })
   )
