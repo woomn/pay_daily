@@ -148,15 +148,15 @@ onMounted(async () => {
                   {{ getCategory(t.categoryId)!.icon }}
                 </VIcon>
               </template>
-              <VListItemTitle class="font-weight-medium">
+              <VListItemTitle class="font-weight-medium text-truncate-cell" style="max-width: 300px;">
                 {{ getCategory(t.categoryId)?.name ?? '—' }}
               </VListItemTitle>
-              <VListItemSubtitle>
+              <VListItemSubtitle class="text-truncate-cell" style="max-width: 300px;">
                 {{ formatDate(t.date) }} · {{ t.note || 'ไม่มีหมายเหตุ' }}
               </VListItemSubtitle>
               <template #append>
                 <span
-                  class="font-weight-bold"
+                  class="font-weight-bold text-no-wrap"
                   :class="t.type === 'income' ? 'text-success' : 'text-error'"
                 >
                   {{ t.type === 'income' ? '+' : '-' }}{{ formatCurrency(t.amount) }}

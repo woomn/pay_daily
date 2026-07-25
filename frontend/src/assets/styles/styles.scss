@@ -9,3 +9,55 @@ body {
 .v-application {
   font-family: var(--font-body);
 }
+
+/* ============================
+   Table cell text overflow fix
+   ============================ */
+.data-table-cell-text {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.v-table .v-data-table__td {
+  max-width: 0; /* force shrink for ellipsis children */
+}
+
+.v-data-table .v-data-table__td .text-truncate-cell {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.cell-wrap {
+  white-space: normal !important;
+  word-break: break-word;
+  max-height: 3em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Responsive header: stack filters on small screens */
+@media (max-width: 960px) {
+  .responsive-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .responsive-header .filter-group {
+    flex-wrap: wrap;
+  }
+}
+
+/* Wider dialog on mobile */
+@media (max-width: 600px) {
+  .v-dialog {
+    --v-dialog-max-width: 95vw !important;
+  }
+}

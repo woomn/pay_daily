@@ -92,9 +92,9 @@ const presets = [
 <template>
   <div>
     <VCard>
-      <VCardTitle class="d-flex align-center justify-space-between pa-4">
-        <span class="text-h6">หมวดหมู่รายรับ/รายจ่าย</span>
-        <div class="d-flex gap-2">
+      <VCardTitle class="d-flex responsive-header justify-space-between pa-4">
+        <span class="text-h6 mb-sm-0">หมวดหมู่รายรับ/รายจ่าย</span>
+        <div class="d-flex gap-2 flex-wrap filter-group">
           <VBtnToggle v-model="typeFilter" density="compact" variant="outlined" color="primary" divided>
             <VBtn value="all" size="small">ทั้งหมด</VBtn>
             <VBtn value="income" size="small">รายรับ</VBtn>
@@ -115,6 +115,7 @@ const presets = [
         :items="filteredCategories"
         :loading="isLoading"
         hover
+        style="table-layout: fixed;"
       >
         <template #item.type="{ item }">
           <VChip

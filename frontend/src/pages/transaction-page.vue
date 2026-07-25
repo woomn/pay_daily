@@ -259,6 +259,9 @@ onMounted(async () => {
           {{ formatDate(item.date) }}
         </template>
 
+        <template #item.note="{ item }">
+          <span class="text-truncate-cell" :title="item.note || ''">{{ item.note || '—' }}</span>
+        </template>
         <template #item.action="{ item }">
           <IconBtn @click="openEdit(item)">
             <VTooltip activator="parent" location="top">แก้ไข</VTooltip>

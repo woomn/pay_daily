@@ -100,7 +100,14 @@ onMounted(() => userStore.fetchUsers())
         :items="users"
         :loading="isLoading"
         hover
+        style="table-layout: fixed;"
       >
+        <template #item.name="{ item }">
+          <span class="text-truncate-cell" :title="item.name">{{ item.name }}</span>
+        </template>
+        <template #item.email="{ item }">
+          <span class="text-truncate-cell" :title="item.email">{{ item.email }}</span>
+        </template>
         <template #item.createdAt="{ item }">
           {{ formatDate(item.createdAt) }}
         </template>
