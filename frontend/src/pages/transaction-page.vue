@@ -207,10 +207,10 @@ onMounted(async () => {
             hide-details
             class="w-36"
           />
-          <VBtnToggle v-model="typeFilter" density="compact" variant="outlined" color="primary" divided>
-            <VBtn value="all" size="small">ทั้งหมด</VBtn>
-            <VBtn value="income" size="small">รายรับ</VBtn>
-            <VBtn value="expense" size="small">รายจ่าย</VBtn>
+          <VBtnToggle v-model="typeFilter" density="compact" variant="outlined" color="primary" class="flex-nowrap">
+            <VBtn value="all" size="small" min-width="64">ทั้งหมด</VBtn>
+            <VBtn value="income" size="small" min-width="60">รายรับ</VBtn>
+            <VBtn value="expense" size="small" min-width="60">รายจ่าย</VBtn>
           </VBtnToggle>
           <VBtn color="primary" prepend-icon="ri-add-line" @click="openCreate">
             เพิ่มรายการ
