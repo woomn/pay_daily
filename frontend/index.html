@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="th">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.png" />
@@ -14,49 +14,49 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     <!-- Primary Meta Tags (will be updated dynamically by useSEO composable) -->
-    <title>Fakduai - Web App Starter Template</title>
-    <meta name="title" content="Fakduai - Web App Starter Template" />
+    <title>ngernngern_thongthong — บัญชีรายรับรายจ่าย</title>
+    <meta name="title" content="ngernngern_thongthong — บัญชีรายรับรายจ่าย" />
     <meta
       name="description"
-      content="A modern, feature-rich Vue 3 + Vuetify admin template with TypeScript support. Build powerful web applications faster."
+      content="ระบบบันทึกรายรับรายจ่ายส่วนตัว ใช้งานง่าย จัดการเงินสดในชีวิตประจำวัน"
     />
     <meta
       name="keywords"
-      content="vue3, vuetify, admin template, dashboard, web app, typescript, fakduai"
+      content="การเงิน, รายรับ, รายจ่าย, งบประมาณ, บัญชี, personal finance, Thai"
     />
-    <meta name="author" content="Fakduai" />
+    <meta name="author" content="Jatura Fakduai" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="theme-color" content="#3b82f6" />
+    <meta name="language" content="Thai" />
+    <meta name="theme-color" content="#1e88e5" />
 
     <!-- Canonical URL (will be updated dynamically) -->
-    <link rel="canonical" href="https://fakduai.com" />
+    <link rel="canonical" href="https://pay-daily-app.pages.dev" />
 
     <!-- Open Graph / Facebook / LinkedIn (will be updated dynamically) -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fakduai.com" />
-    <meta property="og:title" content="Fakduai - Web App Starter Template" />
+    <meta property="og:url" content="https://pay-daily-app.pages.dev" />
+    <meta property="og:title" content="ngernngern_thongthong — บัญชีรายรับรายจ่าย" />
     <meta
       property="og:description"
-      content="A modern, feature-rich Vue 3 + Vuetify admin template with TypeScript support."
+      content="ระบบบันทึกรายรับรายจ่ายส่วนตัว ใช้งานง่าย จัดการเงินสดในชีวิตประจำวัน"
     />
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Fakduai" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="ngernngern_thongthong" />
+    <meta property="og:locale" content="th_TH" />
 
     <!-- Twitter (will be updated dynamically) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://fakduai.com" />
-    <meta name="twitter:title" content="Fakduai - Web App Starter Template" />
+    <meta name="twitter:url" content="https://pay-daily-app.pages.dev" />
+    <meta name="twitter:title" content="ngernngern_thongthong — บัญชีรายรับรายจ่าย" />
     <meta
       name="twitter:description"
-      content="A modern, feature-rich Vue 3 + Vuetify admin template with TypeScript support."
+      content="ระบบบันทึกรายรับรายจ่ายส่วนตัว ใช้งานง่าย จัดการเงินสดในชีวิตประจำวัน"
     />
     <meta name="twitter:image" content="/twitter-image.png" />
-    <meta name="twitter:site" content="@yourtwitter" />
-    <meta name="twitter:creator" content="@yourtwitter" />
+    <meta name="twitter:site" content="@jatura_fakduai" />
+    <meta name="twitter:creator" content="@jatura_fakduai" />
 
     <!-- Apple Mobile Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,11 +64,11 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="apple-mobile-web-app-title" content="Fakduai" />
+    <meta name="apple-mobile-web-app-title" content="ngernngern_thongthong" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
     <!-- Microsoft -->
-    <meta name="msapplication-TileColor" content="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#1e88e5" />
     <meta name="msapplication-TileImage" content="/favicon.png" />
 
     <link rel="stylesheet" type="text/css" href="/loader.css" />
@@ -103,7 +103,7 @@
                 dominant-baseline="middle"
                 transform="scale(0.7, 1)"
               >
-                FD
+                💰
               </text>
             </g>
 
@@ -119,7 +119,7 @@
                 dominant-baseline="middle"
                 transform="scale(0.7, 1)"
               >
-                LP
+                📊
               </text>
             </g>
           </svg>
@@ -134,9 +134,9 @@
     <script type="module" src="/src/main.ts"></script>
     <script>
       const loaderColor =
-        localStorage.getItem("fakduai-initial-loader-bg") || "#FFFFFF";
+        localStorage.getItem("pay-daily-initial-loader-bg") || "#FFFFFF";
       const primaryColor =
-        localStorage.getItem("fakduai-initial-loader-color") || "#a169ff";
+        localStorage.getItem("pay-daily-initial-loader-color") || "#1e88e5";
 
       if (loaderColor)
         document.documentElement.style.setProperty(
